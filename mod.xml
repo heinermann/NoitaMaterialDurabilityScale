@@ -1,0 +1,6 @@
+<!-- https://noita.wiki.gg/wiki/Modding:_mod.xml -->
+<Mod
+	name="Wiki Durability Scale"
+	description="Mod to test spell penetration power against material hardness and durability."
+	download_link="https://github.com/heinermann/NoitaMaterialDurabilityScale"
+/>
