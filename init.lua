@@ -14,7 +14,7 @@ ModMaterialsFileAdd("data/wiki/materials.xml")
 -- Give perk, taken from
 -- https://github.com/DaftBrit/NoitaArchipelago/blob/master/data/archipelago/scripts/ap_utils.lua#L36
 local function give_perk(perk_name)
-	for i, p in ipairs(get_players()) do
+	for _, p in ipairs(get_players()) do
 		local x, y = EntityGetTransform(p)
 		local perk = perk_spawn(x, y, perk_name)
 		perk_pickup(perk, p, EntityGetName(perk), false, false)

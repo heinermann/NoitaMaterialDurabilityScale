@@ -1,0 +1,1 @@
+-- Overwrite the original init.lua which applies weather and biome modifiers

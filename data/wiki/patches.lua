@@ -11,20 +11,29 @@ local EXTRA_STAIN_XMLS = {
 }
 
 local function remove_stains_from_file(filename)
+  if filename == nil then return end
+
   local xml = ModTextFileGetContent(filename)
-  xml = xml:gsub('stains_enabled="%d+"', 'stains_enabled="0"')
-  xml = xml:gsub('stains_radius="%d+"', 'stains_radius="0"')
+  if xml == nil then return end
+
+  xml = string.gsub(xml, 'stains_enabled="%d+"', 'stains_enabled="0"')
+  xml = string.gsub(xml, 'stains_radius="%d+"', 'stains_radius="0"')
   ModTextFileSetContent(filename, xml)
 end
 
+local function remove_stains_from_array(arr)
+  if arr == nil then return end
+
+  for _, related in ipairs(arr) do
+    remove_stains_from_file(related)
+  end
+end
 
 -- Register all stain XMLs
 for _, spell in ipairs(actions) do
-  if spell.related_extra_entities ~= nil then
-    for _, related in ipairs(spell.related_extra_entities) do
-      remove_stains_from_file(related)
-    end
-  end
+  remove_stains_from_array(spell.related_projectiles)
+  remove_stains_from_array(spell.related_extra_entities)
+  remove_stains_from_file(spell.custom_xml_file)
 end
 
 for _, xml in ipairs(EXTRA_STAIN_XMLS) do
