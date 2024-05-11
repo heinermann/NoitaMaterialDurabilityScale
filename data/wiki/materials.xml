@@ -1,0 +1,23 @@
+<Materials>
+  <CellData
+  name="wiki_wall"
+  ui_name="wiki wall"
+  tags="[sunbaby_ignore_list],[NO_FUNGAL_SHIFT],[hax],[indestructible]"
+  burnable="1"
+  density="9999"
+  durability="99"
+  cell_type="solid"
+  wang_color="ff133769"
+  generates_smoke="0"
+  on_fire="0"
+  requires_oxygen="1"
+	solid_collide_with_self="0"
+	solid_on_sleep_convert="0"
+	solid_static_type="1"
+	platform_type="1"
+  solid_friction="1"
+  hp="999999"
+  audio_physics_material_wall="gravel"
+  audio_physics_material_solid="rock"
+  />
+</Materials>

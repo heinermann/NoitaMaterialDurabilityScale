@@ -12,8 +12,8 @@ local EXTRA_STAIN_XMLS = {
 
 local function remove_stains_from_file(filename)
   local xml = ModTextFileGetContent(filename)
-  -- TODO: regex replace stains_enabled="\d+" with stains_enabled="0"
-  -- TODO: regex replace stains_radius="\d+" with stains_radius="0"
+  xml = xml:gsub('stains_enabled="%d+"', 'stains_enabled="0"')
+  xml = xml:gsub('stains_radius="%d+"', 'stains_radius="0"')
   ModTextFileSetContent(filename, xml)
 end
 
