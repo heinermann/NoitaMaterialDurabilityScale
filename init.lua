@@ -14,11 +14,17 @@ ModMaterialsFileAdd("data/wiki/materials.xml")
 -- Give perk, taken from
 -- https://github.com/DaftBrit/NoitaArchipelago/blob/master/data/archipelago/scripts/ap_utils.lua#L36
 local function give_perk(perk_name)
-	for _, p in ipairs(get_players()) do
-		local x, y = EntityGetTransform(p)
-		local perk = perk_spawn(x, y, perk_name)
-		perk_pickup(perk, p, EntityGetName(perk), false, false)
-	end
+  local player = get_players()[1]
+  local x, y = EntityGetTransform(player)
+  local perk = perk_spawn(x, y, perk_name)
+  perk_pickup(perk, player, EntityGetName(perk), false, false)
+end
+
+-- Gives a spell
+local function give_spell(spell_name)
+  local player = get_players()[1]
+  local spell = CreateItemActionEntity(spell_name)
+  GamePickUpInventoryItem(player, spell, false)
 end
 
 -- Clear the weather of any rain/fog/wind, set the time of day and pause it
@@ -36,7 +42,23 @@ end
 
 -- Called when the player character is spawned
 function OnPlayerSpawned(player_entity)
+  -- Give perks
   give_perk("REMOVE_FOG_OF_WAR") -- All-seeing eye
+  give_perk("EDIT_WANDS_EVERYWHERE")
+
+  -- Give spells
+  give_spell("CHAINSAW")
+  give_spell("CHAINSAW")
+  give_spell("CHAINSAW")
+  give_spell("CHAINSAW")
+  give_spell("BURST_2")
+  give_spell("BURST_2")
+  give_spell("RECOIL_DAMPER")
+  give_spell("RECOIL_DAMPER")
+  give_spell("SPREAD_REDUCE")
+  give_spell("SPEED")
+
+  -- Set up the scene
   LoadPixelScene("data/wiki/scene.png", "", -100, -1100, "", true)
   EntityApplyTransform(player_entity, 0, -1000)
 end
