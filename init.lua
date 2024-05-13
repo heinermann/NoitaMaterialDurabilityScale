@@ -40,6 +40,12 @@ local function clear_weather()
 	end)
 end
 
+local SPELLS_TO_TEST = {
+  "LIGHT_BULLET",
+  "BUBBLESHOT",
+  "CHAINSAW",
+}
+
 -- Called when the player character is spawned
 function OnPlayerSpawned(player_entity)
   -- Give perks
@@ -61,6 +67,15 @@ function OnPlayerSpawned(player_entity)
   -- Set up the scene
   LoadPixelScene("data/wiki/scene.png", "", -100, -1100, "", true)
   EntityApplyTransform(player_entity, -65, -1000)
+
+  -- Choose the spell to spawn
+  local index = tonumber(ModSettingGet("wiki_durability.wiki_iter")) or 1
+  if index < 1 then index = 1 end
+
+  if index <= #SPELLS_TO_TEST then
+    give_spell(SPELLS_TO_TEST[index])
+    ModSettingSetNextValue("wiki_durability.wiki_iter", tostring(index + 1), false)
+  end
 end
 
 -- Called after the world has been loaded
