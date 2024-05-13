@@ -78,6 +78,11 @@ for _, xml in ipairs(EXTRA_STAIN_XMLS) do
 end
 
 -- #########################################################
+-- ## Turn off max uses for spells
+-- #########################################################
+ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "data/wiki/patch_gun_actions.lua")
+
+-- #########################################################
 -- ## Other tweaks
 -- #########################################################
 

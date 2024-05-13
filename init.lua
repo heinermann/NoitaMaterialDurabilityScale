@@ -171,6 +171,12 @@ function OnPlayerSpawned(player_entity)
     add_spell_to_wand(SPELLS_TO_TEST[index])
     ModSettingSetNextValue("wiki_durability.wiki_iter", tostring(index + 1), false)
   end
+
+  -- Make invincible
+  local components = EntityGetComponent(player_entity, "DamageModelComponent") or {}
+  for _,component in ipairs(components) do
+    EntityRemoveComponent(player_entity, component)
+  end
 end
 
 -- Called after the world has been loaded
