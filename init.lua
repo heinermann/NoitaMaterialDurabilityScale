@@ -60,7 +60,7 @@ function OnPlayerSpawned(player_entity)
 
   -- Set up the scene
   LoadPixelScene("data/wiki/scene.png", "", -100, -1100, "", true)
-  EntityApplyTransform(player_entity, 0, -1000)
+  EntityApplyTransform(player_entity, -65, -1000)
 end
 
 -- Called after the world has been loaded
