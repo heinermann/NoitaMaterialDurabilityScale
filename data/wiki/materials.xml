@@ -28,6 +28,7 @@
 	show_in_creative_mode="0"
 	gfx_glow="50"
 	platform_type="1"
+	solid_static_type="1"
 	crackability="1"
 	tags="[alchemy],[solid],[earth],[sunbaby_ignore_list],[NO_FUNGAL_SHIFT],[hax]"
 	burnable="0"
@@ -38,7 +39,6 @@
 	requires_oxygen="0"
 	temperature_of_fire="10"
 	solid_break_on_explosion_rate="90"
-	solid_static_type="0"
 	solid_friction="0.05"
 	>
 	<Graphics
