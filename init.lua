@@ -46,6 +46,12 @@ local SPELLS_TO_TEST = {
   "CHAINSAW",
 }
 
+local function add_spell_to_wand(spell_name)
+  local spell = CreateItemActionEntity(spell_name)
+  local wand = EntityGetWithTag("first_wand")[1]
+  EntityAddChild(wand, spell)
+end
+
 -- Called when the player character is spawned
 function OnPlayerSpawned(player_entity)
   -- Give perks
@@ -73,7 +79,7 @@ function OnPlayerSpawned(player_entity)
   if index < 1 then index = 1 end
 
   if index <= #SPELLS_TO_TEST then
-    give_spell(SPELLS_TO_TEST[index])
+    add_spell_to_wand(SPELLS_TO_TEST[index])
     ModSettingSetNextValue("wiki_durability.wiki_iter", tostring(index + 1), false)
   end
 end
