@@ -81,4 +81,5 @@ end
 -- Called after the world has been loaded
 function OnWorldInitialized()
   clear_weather()
+  SwitchDebugLogForReal()
 end
