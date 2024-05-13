@@ -20,4 +20,160 @@
   audio_physics_material_wall="gravel"
   audio_physics_material_solid="rock"
   />
+  <CellData
+	name="fake_glass_static"
+	ui_name="false ice"
+  	wang_color="ffdee1fb"
+        durability="0"
+	show_in_creative_mode="0"
+	gfx_glow="50"
+	platform_type="1"
+	crackability="1"
+	tags="[alchemy],[solid],[earth],[sunbaby_ignore_list],[NO_FUNGAL_SHIFT],[hax]"
+	burnable="0"
+	density="0"
+	cell_type="solid"
+	generates_smoke="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	solid_break_on_explosion_rate="90"
+	solid_static_type="0"
+	solid_friction="0.05"
+	>
+	<Graphics
+	texture_file="data/materials_gfx/ice.png"
+	color="ffCFF7C8" >
+	<Edge>
+	 <EdgeGraphics 
+		overwrite="0" 
+		percent="0.8" 
+		require_same_material="1" 
+		require_same_material_type="1" 
+		type="EVERYWHERE" 
+		z="1" >
+	    <Images>
+		<Image 
+		allow_random_rotation="1"
+		filename="data/materials_gfx/edge_files/edge_ice.png" 
+		/>
+	    </Images>
+	  </EdgeGraphics>
+	</Edge>
+    </Graphics>
+  </CellData>
+  <CellData
+	name="hard_cheese_static"
+	ui_name="hard_cheese_static"
+	tags="[static],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth]"
+	burnable="0"
+	density="16"
+	cell_type="solid"
+	wang_color="ffF3CD68"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	durability="5"
+	on_fire="0"
+	hp="999999" 
+	platform_type="1"
+	show_in_creative_mode="1"
+	>
+  </CellData>
+  <CellData
+  	_parent="gem_red"
+  	name="gem_red_float"
+	ui_name="red gem"
+	solid_static_type="1"
+	gfx_glow_color="0xFFFF0000"
+	wang_color="fffd2d7e"
+	solid_gravity_scale="0.8"
+	durability="15"
+        cell_type="solid"
+	platform_type="1"
+	>
+  	<Graphics
+	color="ffE72850" >
+    </Graphics>
+  </CellData>
+  <CellData
+  	_parent="sun_gem"
+	tags="[matter_eater_ignore_list],[sunbaby_ignore_list]"
+  	name="sun_gem"
+	ui_name="sun"
+	solid_static_type="1"
+	gfx_glow_color="0xffff9919"
+	gfx_glow="255"
+	wang_color="ffaf901A"
+	hp="1000000"
+	durability="16"
+	cell_type="solid"
+        solid_gravity_scale="0.5"
+	platform_type="1"
+	>
+  	<Graphics
+	color="ffffc74e" >
+    </Graphics>
+  </CellData>
+  <CellDataChild
+  	_parent="rock_static"
+  	_inherit_reactions="0"
+  	name="rock_eroding_2" 
+	ui_name="$mat_rock_eroding_2"
+	cell_type="solid"
+	wang_color="ffafb147"
+	durability="2"
+	hp="100"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+	texture_file="data/materials_gfx/rock_hard.png"
+	color="ffabb344" >
+    </Graphics>
+  </CellDataChild>
+  <CellData
+	name="fake_rat_powder"
+	ui_name="fake rat powder"
+	burnable="0"
+	density="7"
+	durability="3"
+	cell_type="solid"
+	wang_color="ffbe4d00"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="10"
+	autoignition_temperature="0"
+	generates_flames="0"
+	on_fire_flame_material="swamp"
+	hp="1000" 
+	fire_hp="20"
+	show_in_creative_mode="0"
+	lifetime="4.0"
+	platform_type="1"
+	solid_static_type="1"
+	solid_on_collision_material="blood"
+	solid_break_to_type="blood"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	>
+    <Graphics
+	  texture_file="data/materials_gfx/meat_rotten.png"
+	  color="ffb89e57" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.15" />
+			<StatusEffect type="FOOD_POISONING" amount="0.05" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="WET" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+<!-- REACTIONS -->
 </Materials>
