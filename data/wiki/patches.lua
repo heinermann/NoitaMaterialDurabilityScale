@@ -1,7 +1,7 @@
 -- This file makes patches and changes to the game before anything else is called
 
 -- #########################################################
--- ## Patch all spells to disable staining
+-- ## Spell stain removal functions
 -- #########################################################
 dofile_once("data/scripts/gun/gun_actions.lua")
 
@@ -62,7 +62,11 @@ local function remove_stains_from_array(arr)
   end
 end
 
--- Register all stain XMLs
+-- #########################################################
+-- ## Patch all spells to disable staining
+-- #########################################################
+
+-- Iterate all stain XMLs
 for _, spell in ipairs(actions) do
   remove_stains_from_array(spell.related_projectiles)
   remove_stains_from_array(spell.related_extra_entities)
