@@ -8,6 +8,7 @@ dofile_once("data/scripts/gun/gun_actions.lua")
 local EXTRA_STAIN_XMLS = {
   "data/entities/base_projectile_physics.xml",
   "data/entities/base_prop_crystal.xml",
+  "data/entities/projectiles/deck/spore_pod_growing.xml",
 }
 
 local NONEXISTENT_XMLS = {
