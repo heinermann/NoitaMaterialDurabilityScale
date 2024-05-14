@@ -78,6 +78,13 @@ for _, xml in ipairs(EXTRA_STAIN_XMLS) do
 end
 
 -- #########################################################
+-- ## Remove material staining effect
+-- #########################################################
+local material_xml = ModTextFileGetContent("data/materials.xml")
+material_xml = string.gsub(material_xml, 'liquid_stains="%d+"', 'liquid_stains="0"')
+ModTextFileSetContent("data/materials.xml", material_xml)
+
+-- #########################################################
 -- ## Turn off max uses for spells
 -- #########################################################
 ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "data/wiki/patch_gun_actions.lua")
